@@ -12,7 +12,7 @@
 
 
 
-開発・実験に関するドキュメントは `doc/dev.md`, `src/bert_train` にあります。
+開発・実験に関するドキュメントは `doc/dev.md`, `src/bert_train/README.md` にあります。
 
 
 ## 参考文献

@@ -1,0 +1,51 @@
+hydra:
+  sweeper:
+    params:
+      dataset.pause_time_threshold_ms: 80
+      # dataset.pause_time_threshold_ms: 80
+      # dataset.preprocess_type: narrative,audiobook_narrative,none,all,audiobook
+      dataset.preprocess_type: narrative, audiobook_narrative
+      model.num_labels: 1
+      training.loss_ignoring_no_pause: False
+      
+
+defaults:
+  - _self_
+
+model:
+  name: "cl-tohoku/bert-base-japanese-whole-word-masking"
+  num_labels: 1
+
+device: "cuda"
+gpu_id: 0
+seed: 42
+
+mlflow:
+  tracking_uri: "file:///data2/takeshun256/mlruns"
+  experiment_name: "bert_finetuning_morp_pause_length_3models_8preprocess"
+
+data:
+  max_length: 128
+  batch_size: 32
+  test_size: 0.10
+  val_size: 0.20
+  random_state: 42
+  return_df: False
+
+dataset:
+  pause_time_threshold_ms: 80
+  # pause_time_threshold_ms: 80,100
+  preprocess_type: "all"
+  # preprocess_type: "all","audiobook","narrative","audiobook_narrative","none"
+
+training:
+  encoder_lr: 5e-6
+  decoder_lr: 5e-4
+  eps: 1e-6
+  batch_size: 32
+  max_length: 128
+  epochs: 30
+  patience: 3
+  loss_ignoring_no_pause: False
+
+

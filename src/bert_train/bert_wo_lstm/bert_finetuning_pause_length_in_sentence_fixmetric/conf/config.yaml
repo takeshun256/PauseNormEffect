@@ -1,0 +1,51 @@
+hydra:
+  sweeper:
+    params:
+      dataset.pause_time_threshold_ms: 80,100
+      # dataset.preprocess_type: none,all,audiobook,narrative,audiobook_narrative,speaker,book
+      dataset.preprocess_type: all
+      model.num_labels: 2
+      training.epochs: 100
+      training.patience: 10
+      training.max_length_train: 48
+      training.max_length_val: 48
+      training.max_length_test: 94
+      
+
+defaults:
+  - _self_
+
+model:
+  name: "cl-tohoku/bert-base-japanese-whole-word-masking"
+  num_labels: 1
+  layer_num: 1
+  linear_pooling_type: none # FCに最終隠れそうを入れる場合はnone
+
+device: "cuda"
+gpu_id: 0
+seed: 42
+
+mlflow:
+  tracking_uri: "file:///data2/takeshun256/mlruns"
+  experiment_name: "bert_finetuning_pause_length_in_sentence_earlystop_final"
+
+# 使用されていない(既に別で処理済みのため)
+# data:
+#   test_size: 0.20
+#   val_size: 0.25
+#   random_state: 42
+
+dataset:
+  pause_time_threshold_ms: 80,100
+  preprocess_type: all,audiobook,narrative,audiobook_narrative,speaker,book
+
+training:
+  encoder_lr: 5e-6
+  decoder_lr: 5e-4
+  eps: 1e-6
+  batch_size: 32
+  max_length_train: 128
+  max_length_val: 128
+  max_length_test: 128
+  epochs: 100
+  patience: 10

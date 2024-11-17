@@ -1,0 +1,28 @@
+[tool.black]
+line-length = 119
+
+[tool.isort]
+profile = "black"
+line_length = 119
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.ruff]
+line-length = 119
+select = [
+    "I", # isort
+    "N", # pep8-naming
+    "E", # pycodestyle
+    "F", # pyflakes
+    "W", # pycodestyle
+    "D", # pydocstyle
+]
+ignore = []
+unfixable = ["F401", "F841"]
+target-version = "py39"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.mccabe]
+max-complexity = 12

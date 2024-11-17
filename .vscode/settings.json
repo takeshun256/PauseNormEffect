@@ -1,0 +1,12 @@
+{
+    // ssh内だとworkspace.trustを無効化しても拡張機能による自動Formatが効かず無意味になる
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSaveMode": "file",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        },
+    },
+}

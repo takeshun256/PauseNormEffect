@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "MS-CEINTL.vscode-language-pack-ja",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "charliermarsh.ruff",
+        "njpwerner.autodocstring",
+        "ms-toolsai.jupyter",
+    ]
+}

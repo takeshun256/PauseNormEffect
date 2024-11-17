@@ -1,0 +1,38 @@
+hydra:
+  sweeper:
+    params:
+      model.name: "cl-tohoku/bert-base-japanese-whole-word-masking"
+      training.encoder_lr: 5e-6,5e-7,5e-8
+      training.batch_size: 32
+      training.max_length: 128
+      training.epochs: 30
+
+defaults:
+  - _self_
+
+model:
+  name: "cl-tohoku/bert-base-japanese-whole-word-masking"
+
+device: "cuda"
+gpu_id: 2
+
+mlflow:
+  tracking_uri: "file:///data2/takeshun256/mlruns"
+  experiment_name: "bert_finetuning_morp_pause_length_regression_witheval"
+
+data:
+  max_length: 128
+  batch_size: 32
+  test_size: 0.2
+  val_size: 0.25
+  random_state: 42
+  return_df: True
+
+training:
+  encoder_lr: 5e-6
+  decoder_lr: 5e-4
+  eps: 1e-6
+  batch_size: 32
+  max_length: 128
+  epochs: 30
+

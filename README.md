@@ -11,6 +11,10 @@
 [朗読音声合成におけるポーズ長分布の多様性を吸収するための標準化の効果](https://www.jstage.jst.go.jp/article/pjsai/JSAI2024/0/JSAI2024_4Xin234/_article/-char/ja)
 
 
+
+開発環境ドキュメントは doc/dev.md にあります。
+
+
 ## 参考文献
 
 [1] Alok Parlikar and Alan W. Black. Modeling pauseduration for style-specific speech synthesis. In Proc. Interspeech 2012, pp. 446–449, 2012.
@@ -21,4 +25,4 @@
 
 
 
-開発環境ドキュメントは doc/dev.md にあります。
+

@@ -10,7 +10,7 @@
 
 [朗読音声合成におけるポーズ長分布の多様性を吸収するための標準化の効果](https://www.jstage.jst.go.jp/article/pjsai/JSAI2024/0/JSAI2024_4Xin234/_article/-char/ja)
 
-
+人工知能学会での発表ポスターは `doc/poster.pdf` にあります。
 
 開発・実験に関するドキュメントは `doc/dev.md`, `src/bert_train/README.md` にあります。
 
